@@ -1,0 +1,83 @@
+.active{
+  text-decoration: none;
+}
+
+.active:hover {
+  color: gray;
+  transition: color 0.5s;
+}
+ 
+.notActive{
+  text-decoration: none;
+  color:gray;
+}
+
+.notActive:hover {
+  transition: color 0.5s;
+}
+
+button img{
+  width: 1rem;
+}
+
+.filaMain{
+  padding: 3rem;
+  border: 2px solid gray;
+  border-radius: 20px;
+}
+
+.img_dw img{
+  width: 70%;
+}
+
+.contenedorTipos{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+
+}
+
+.cajaTipo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem 0 1rem;
+  color:white;
+  font-weight: bold;
+  border-radius: 1rem;
+  width: auto;
+}
+
+.cajaTipo img{
+  width: 15px;
+}
+
+.grass{
+  background-color: green;
+}
+
+.bug{
+  background-color: rgb(89, 175, 130);
+}
+
+.poison{
+  background-color: purple;
+}
+
+.fire{
+  background-color: red;
+}
+
+.water{
+  background-color: rgb(0, 247, 255);
+}
+
+.flying{
+  background-color: rgb(127, 144, 255);
+}
+
+.normal{
+  background-color: rgb(197, 197, 197);
+}
+
