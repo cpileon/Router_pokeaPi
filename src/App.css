@@ -16,13 +16,26 @@
   transition: color 0.5s;
 }
 
-button img{
+.homeContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+
+}
+
+.pokemonGo{
+  width: 30%;
+}
+
+.boton img{
   width: 1rem;
 }
 
 .filaMain{
-  padding: 3rem;
-  border: 2px solid gray;
+  padding: 2rem 3rem 2rem 3rem;
+  border: 0.5rem solid #212529;
   border-radius: 20px;
 }
 
@@ -34,7 +47,6 @@ button img{
   display: flex;
   gap: 1rem;
   margin: 1rem;
-
 }
 
 .cajaTipo{

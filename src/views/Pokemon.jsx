@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
-import Card from 'react-bootstrap/Card';
 
 
 
@@ -37,14 +36,6 @@ const Pokemon = () =>{
         }))
 
         const types = data.types.map(({ type })=>(type["name"]))
-        console.log(types)
-        console.log(stats)
-        console.log(src_RB)
-        console.log(src_G)
-        console.log(src_S)
-        console.log(src_C)
-
-        console.log(src_dw)
 
         setPokemon({name, stats, src_dw, src_RB, src_Y, src_G, src_S, src_C, types})
         console.log(pokemon)
@@ -54,10 +45,16 @@ const Pokemon = () =>{
 
     return(
         <>
-        <Container className='mt-5'>
-            <div className='filaMain row'>
+        <Container className='mt-4'>
+            <div className='filaMain row gap-4 shadow'>
                 <div className='contenedorData col'>
-                    <h1>{pokemon.name}</h1>
+                    <div >
+                        <div className="m-1" style={{ backgroundColor: 'blue', height: 30, width: 30, borderRadius: '50%', border: '0.5rem solid #212529', display: 'inline-block'}} ></div>
+                        <div className="m-1" style={{ backgroundColor: 'red', height: 30, width: 30, borderRadius: '50%', border: '0.5rem solid #212529', display: 'inline-block'}} ></div>
+                        <div className="m-1" style={{ backgroundColor: 'green', height: 30, width: 30, borderRadius: '50%', border: '0.5rem solid #212529', display: 'inline-block'}} ></div>
+                        <h1>{pokemon.name}</h1>
+                    </div>
+                    
                     <div className='contenedorTipos'>
                         <h4>Tipos: </h4>
                             <div className={`cajaTipo ${pokemon.types && pokemon.types[0]}`}> 
@@ -70,12 +67,13 @@ const Pokemon = () =>{
                                 {pokemon.types && pokemon.types[1].toUpperCase()}
                             </div> : null}
                     </div>
-                    <div className="img_dw">
+                    <div className="img_dw d-flex justify-content-center p-4">
                     <img src={pokemon.src_dw} alt={pokemon.name} />
                 </div>
             </div>
 
-        <div className='contenedor_sprites col'>
+        <div className='contenedor_sprites col d-flex flex-column align-items-center justify-content-center text-center gap-2'>
+            <h4>Sprites primeras generaciones</h4>
             <div className='row'>
                 <div className='col'>
                     <div className='sprite'>
@@ -112,31 +110,44 @@ const Pokemon = () =>{
             </div>
         </div>
 
-            <div className='contenedorStats col'>
-                <Table striped bordered hover>
+            <div className='contenedorStats col d-flex flex-column align-items-center justify-content-center'>
+                <h4>Resumen estados base</h4>
+                <Table hover>
                     <tbody>
                         <tr>
-                            <td><strong>HP</strong></td>
+                            <td>
+                                <img src="../../src/imgs/pokeball.svg" width="30px" className="mx-3" />
+                                <strong>HP</strong></td>
                             <td>{pokemon.stats && pokemon.stats[0].base_stat}</td>
                         </tr>
                         <tr>
-                            <td><strong>Ataque</strong></td>
+                            <td>
+                                <img src="../../src/imgs/pokeball.svg" width="30px" className="mx-3" />
+                                <strong>Ataque</strong></td>
                             <td>{pokemon.stats && pokemon.stats[1].base_stat}</td>
                         </tr>
                         <tr>
-                            <td><strong>Defensa</strong></td>
+                            <td>
+                                <img src="../../src/imgs/pokeball.svg" width="30px" className="mx-3" />
+                                <strong>Defensa</strong></td>
                             <td>{pokemon.stats && pokemon.stats[2].base_stat}</td>
                         </tr>
                         <tr>
-                            <td><strong>Ataque especial</strong></td>
+                            <td>
+                                <img src="../../src/imgs/pokeball.svg" width="30px" className="mx-3" />
+                                <strong>Ataque especial</strong></td>
                             <td>{pokemon.stats && pokemon.stats[3].base_stat}</td>
                         </tr>
                         <tr>
-                            <td><strong>Defensa especial</strong></td>
+                            <td>
+                                <img src="../../src/imgs/pokeball.svg" width="30px" className="mx-3" />
+                                <strong>Defensa especial</strong></td>
                             <td>{pokemon.stats && pokemon.stats[4].base_stat}</td>
                         </tr>
                         <tr>
-                            <td><strong>Velocidad</strong></td>
+                            <td>
+                                <img src="../../src/imgs/pokeball.svg" width="30px" className="mx-3" />
+                                <strong>Velocidad</strong></td>
                             <td>{pokemon.stats && pokemon.stats[5].base_stat}</td>
                         </tr>
                     </tbody>
